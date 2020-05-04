@@ -4,7 +4,33 @@
   margin: 15rem 0;
 
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  // grid-template-columns: repeat(3, 1fr);
+
+  // To make the column responsive
+  // The column will be minimum 25rem to max 1fr
+  // Base on this, the CSS will add as many trex as fit in the container(same as when the width gets to < 25rem, it will add a new row to maintain the minimum width)
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   grid-gap: 6rem;
   // all of our grid will be in implicit grids
+  align-items: start;
+}
+
+.feature {
+
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2.5rem;
+  
+  &__icon {
+    fill: $color-primary;
+    width: 4.5rem;
+    height: 4.5rem;
+    grid-row: 1 / span 2; // cannot use 1 / -1 because implicit grid
+    transform: translateY(-1rem);
+  }
+
+  &__text {
+    font-size: 1.7rem;
+  }
 }
