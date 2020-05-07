@@ -7,7 +7,7 @@
   // Using "vw"unit, the pictures will be decreased 
   // with aspect ratio when the width of the screen decreases
   grid-template-rows: repeat(7, 5vw); 
-  grid-gap: 1.5rem;
+  gap: 1.5rem;
   padding: 1.5rem;
     
   &__item {
